@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<h1 class="h3 mb-2 text-gray-800">Table Category</h1>
+<p class="mb-4">
+    DataTables is a third party plugin that is used to generate the demo table
+    below. For more information about DataTables, please visit the
+    <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.
+</p>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <form action="{% url 'suratkeluarcreate' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="No Surat">No Surat</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="no_surat" />
+            </div>
+            <div class="form-group">
+                <label for="Kode Surat">Kode Surat</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="kode_surat" />
+            </div>
+            <div class="form-group">
+                <label for="Tanggal Keluar">Tanggal Keluar</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="tgl_keluar" />
+            </div>
+            <div class="form-group">
+                <label for="Ditujukan">DiTujukan</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="ditujukan" />
+            </div>
+            <div class="form-group">
+                <label for="Perihal">Perihal</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="perihal" />
+            </div>
+            <div class="form-group">
+                <label for="keterangan">keterangan</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="keterangan" />
+            </div>
+            <div class="form-group">
+                <label for="Kategori">Kategori</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="kategori" />
+            </div>
+
+            <div class="form-group">
+                <label for="Image">Image</label>
+                <input type="file" class="form-control form-control-sm mb-2 mr-sm-2" name="image" />
+            </div>
+            <div class="form-group">
+                <label for="Status">Status</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="status" />
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="pegawai" id="">
+                    <option value="Kosong">Kosong</option>
+                    {% for p in pegawai %}
+                    <option value="{{p.nama}}">{{p.nama]}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Lampiran">Lampiran</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="lampiran" />
+            </div>
+            <div class="form-group">
+                <label for="Sifat">Sifat</label>
+                <input class="form-control form-control-sm mb-2 mr-sm-2" name="sifat" />
+            </div>
+            <button class="btn btn-primary btn-md">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

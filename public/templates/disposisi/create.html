@@ -1,0 +1,100 @@
+{% extends 'layouts/base.html' %} 
+{% block content %}
+<h1 class="h3 mb-2 text-gray-800">Table Category</h1>
+<p class="mb-4">
+  DataTables is a third party plugin that is used to generate the demo table
+  below. For more information about DataTables, please visit the
+  <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.
+</p>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+  </div>
+  <div class="card-body">
+    <form action="{% url 'createcategory' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="No Surat">No Surat</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="no_surat" />
+      </div>
+      <div class="form-group">
+        <label for="DiTeruskan">DiTeruskan</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="diteruskan" />
+      </div>
+      <div class="form-group">
+        <label for="Dari">Dari</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="dari" />
+      </div>
+      <div class="form-group">
+        <label for="Dengan Hormat">Dengan Hormat</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="dgn_hormat" />
+      </div>
+      <div class="form-group">
+        <label for="Tgl Surat">Tanggal Surat</label>
+        <input type="date" class="form-control form-control-sm mb-2 mr-sm-2" name="tgl_surat" />
+      </div>
+      
+      <div class="form-group">
+        <label for="Tgl Diterima">Tanggal Diterima</label>
+        <input type="date" class="form-control form-control-sm mb-2 mr-sm-2" name="tgl_diterima" />
+      </div>
+      <div class="form-group">
+        <label for="Sifat">Sifat</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="sifat" />
+      </div>
+      <div class="form-group">
+        <label for="Perihal">Perihal</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="perihal" />
+      </div>
+      <div class="form-group">
+        <label for="Catatan">Catatan</label>
+        <input class="form-control form-control-sm mb-2 mr-sm-2" name="catatan" />
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" name="pegawai" id="">
+          <option value="Kosong">Kosong</option>
+          {% for p in pegawai_all %}
+            <option value="{{p.nama}}">{{p.nama]}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <select class="form-control" name="smasuk" id="">
+          <option value="Kosong">Kosong</option>
+          {% for p in suratmasuk_all %}
+            <option value="{{p.no_surat}}">{{p.no_surat]}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="VREAD">VRead</label>
+        <input type="number" class="form-control form-control-sm mb-2 mr-sm-2" name="v_read" />
+      </div>
+      
+      <div class="form-group">
+        <label for="Tanggapan">Tanggapan</label>
+        <input type="text" class="form-control form-control-sm mb-2 mr-sm-2" name="tanggpan" />
+      </div>
+      <div class="form-group">
+        <label for="Tanggapan">Tanggapan</label>
+        <input type="text" class="form-control" name="tanggapan" id="">
+      </div>
+      
+      <div class="form-group">
+        <label for="Tujuan">Tujuan</label>
+        <input type="text" class="form-control" name="tujuan" id="">
+      </div>
+      <div class="form-group">
+        <label for="Teruntuk">Teruntuk</label>
+        <input type="text" class="form-control" name="teruntuk" id="">
+      </div>
+      <button class="btn btn-primary btn-md">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
