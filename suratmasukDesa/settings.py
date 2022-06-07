@@ -59,7 +59,7 @@ ROOT_URLCONF = 'suratmasukDesa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["public/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

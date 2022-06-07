@@ -28,100 +28,66 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pegawai"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Customer</span>
+            <span>Pegawai</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="pegawai" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Customer</h6>
-                <a class="collapse-item" href="{% url 'customer' %}">List</a>
-                <a class="collapse-item" href="{% url 'createcustomer' %}">Create</a>
+                <h6 class="collapse-header">Pegawai</h6>
+                <a class="collapse-item" href="{% url 'pegawai' %}">List</a>
+                <a class="collapse-item" href="{% url 'pegawaicreate' %}">Create</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#category"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#suratmasuk"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Category</span>
+            <span>SuratMasuk</span>
         </a>
-        <div id="category" class="collapse" aria-labelledby="headingUtilities"
+        <div id="suratmasuk" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Category</h6>
-                <a class="collapse-item" href="{% url 'category' %}">List</a>
-                <a class="collapse-item" href="{% url 'createcategory' %}">Create</a>
+                <h6 class="collapse-header">SuratMasuk</h6>
+                <a class="collapse-item" href="{% url 'suratmasuk' %}">List</a>
+                <a class="collapse-item" href="{% url 'suratmasukcreate' %}">Create</a>
             </div>
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#product"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#suratkeluar"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Product</span>
+            <span>SuratKeluar</span>
         </a>
-        <div id="product" class="collapse {% if collapse" aria-labelledby="headingUtilities"
+        <div id="SuratKeluar" class="collapse {% if collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Product</h6>
-                <a class="collapse-item" href="{% url 'product' %}">List</a>
-                <a class="collapse-item" href="{% url 'productcreate' %}">Create</a>
+                <h6 class="collapse-header">SuratKeluar</h6>
+                <a class="collapse-item" href="{% url 'suratkeluar' %}">List</a>
+                <a class="collapse-item" href="{% url 'suratkeluarcreate' %}">Create</a>
             </div>
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#supplier"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#disposisi"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Supplier</span>
+            <span>Disposisi</span>
         </a>
-        <div id="supplier" class="collapse" aria-labelledby="headingUtilities"
+        <div id="disposisi" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Supplier</h6>
-                <a class="collapse-item" href="{% url 'supplier' %}">List</a>
-                <a class="collapse-item" href="{% url 'suppliercreate' %}">Create</a>
+                <h6 class="collapse-header">Disposisi</h6>
+                <a class="collapse-item" href="{% url 'disposisi' %}">List</a>
+                <a class="collapse-item" href="{% url 'disposisicreate' %}">Create</a>
             </div>
         </div>
     </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productmasuk"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Product Masuk</span>
-        </a>
-        <div id="productmasuk" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Product Masuk</h6>
-                <a class="collapse-item" href="{% url 'productmasuk' %}">List</a>
-                <a class="collapse-item" href="{% url 'prodmasukcreate' %}">Create</a>
-            </div>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productkeluar"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Product Keluar</span>
-        </a>
-        <div id="productkeluar" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Product Keluar</h6>
-                <a class="collapse-item" href="{% url 'productkeluar' %}">List</a>
-                <a class="collapse-item" href="{% url 'prodkeluarcreate' %}">Create</a>
-            </div>
-        </div>
-    </li>
-    
-
-    <!-- Divider -->
-    
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
